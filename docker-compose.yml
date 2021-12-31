@@ -1,0 +1,15 @@
+version: '3.2'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: thelsamar
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: secure123
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    restart: unless-stopped
+    ports:
+      - "3540:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
