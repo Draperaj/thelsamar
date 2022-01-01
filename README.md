@@ -35,7 +35,7 @@ The backend API for this application provides you with the following endpoints:
 `/api/payment/` - POST
 
 This endpoint will take a JSON body with the following format
-```
+```json
 {
   "customerId": 1,
   "orders": [
