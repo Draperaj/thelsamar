@@ -14,14 +14,14 @@ services:
     volumes:
       - ./db:/docker-entrypoint-initdb.d
   backend:
-    build: .
+    build: ./backend
     environment:
       taxjar_token: YOUR_TOKEN_HERE
     restart: unless-stopped
     ports:
-      - "1901:1901"
+      - "1901:8080"
   frontend:
     build: ./frontend
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "80:3000"

@@ -1,9 +1,7 @@
 FROM openjdk:11
 
-COPY backend ./
+COPY ./ ./
 RUN ./gradlew clean
 RUN ./gradlew build --no-daemon
-
-EXPOSE 1901
 
 ENTRYPOINT ["./gradlew","bootRun"]
