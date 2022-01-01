@@ -31,7 +31,7 @@ class PaymentController {
   @Autowired
   private TaxService taxService
 
-  @PostMapping("/") ResponseEntity calculatePayment(@RequestBody PaymentCalculationRequest request) {
+  @PostMapping ResponseEntity calculatePayment(@RequestBody PaymentCalculationRequest request) {
     Customer customer = customerService.findCustomerById(request.customerId)
 
     Map responseObject = [:]
