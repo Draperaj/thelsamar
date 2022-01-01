@@ -4,7 +4,7 @@ Thelsamar is an application used to order a cart of items from an inventory and 
 ## Running locally
 ### Before you run
 
-The following ports will need to be available on your local machine: `1901`, `3540`
+The following ports will need to be available on your local machine: `1901`, `3540`, `3000`
 
 You will need a taxjar API token before running. You can get one here:
 https://developers.taxjar.com/api/reference
