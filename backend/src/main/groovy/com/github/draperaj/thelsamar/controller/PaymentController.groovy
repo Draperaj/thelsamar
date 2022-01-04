@@ -11,6 +11,7 @@ import com.github.draperaj.thelsamar.service.InventoryService
 import com.github.draperaj.thelsamar.service.TaxService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -31,6 +32,7 @@ class PaymentController {
   @Autowired
   private TaxService taxService
 
+  @CrossOrigin(origins = "http://localhost:8080")
   @PostMapping ResponseEntity calculatePayment(@RequestBody PaymentCalculationRequest request) {
     Customer customer = customerService.findCustomerById(request.customerId)
 
