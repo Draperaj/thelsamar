@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Form } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import './OrderForm.css';
@@ -30,6 +30,10 @@ export default function OrderForm(props) {
         }
         navigate("/payment", {state: {customerId: customerId, orders: ordersList}});
     }
+
+    useEffect(() => {
+        document.title = "Order | Thelsamar"
+    }, []);
 
     return(<div className="orderForm">
         <Form size="lg" className="mx-auto" onSubmit={submitOrder}>
