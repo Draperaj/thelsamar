@@ -14,10 +14,17 @@ Now that you have an API token you will need to replace the following value in t
 taxjar_token: YOUR_TOKEN_HERE
 ```
 
+#### Non Windows Setups
+If you're running this container on a non Windows/WSL2 Docker setup, you will need to change any reference to `docker.host.internal` the stack uses to instead the IP/ID of the individual containers.
+
 ### Running the Containers
 To run the containers for the application you will simply need to run
 ```
 docker compose up -d
+```
+If you make any changes to the software or change any configurations, you will want to rebuild the container. You can do this by running
+```
+docker compose build
 ```
 If you plan on changing the db schema or you enter records that bungle the system up, re-run the container with the following commands
 ```
@@ -27,6 +34,10 @@ The `--force-recreate` flag will reset the database back to its defaults.
 
 ### How to contact for help
 If you need help getting the application up and running after following this readme, feel free to contact the auther Draperaj
+
+## Frontend
+The frontend application for the stack will be served at http://localhost
+You will arrive at the landing page and following through will take you through the ordering flow.
 
 ## Backend API
 The backend API for this application provides you with the following endpoints:
